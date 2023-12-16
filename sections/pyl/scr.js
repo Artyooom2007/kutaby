@@ -13,4 +13,4 @@ buttonId.addEventListener('click',function(){
  }  
 
 
-hId.textContent='Закликано:'+count2+' комков. '+count+' Пылинок.'});
+hId.textContent='Р—Р°РєР»РёРєР°РЅРѕ:'+count2+' РєРѕРјРєРѕРІ. '+count+' РџС‹Р»РёРЅРѕРє.'});
