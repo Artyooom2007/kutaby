@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1730491877,
+	"version": 1730493582,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -33,7 +33,6 @@
 		"images/muromec_turret-sheet0.png",
 		"images/camel-sheet0.png",
 		"images/camelturret-sheet0.png",
-		"images/joystick-sheet0.png",
 		"images/ratatouille-sheet0.png",
 		"images/sprite-sheet0.png",
 		"images/gamename-sheet0.png",
@@ -42,6 +41,7 @@
 		"images/chwkilogo-sheet0.png",
 		"images/exit-sheet0.png",
 		"images/shoothitbox-sheet0.png",
+		"images/shootbutton-sheet0.png",
 		"media/flyy1.ogg",
 		"media/machinegun1.ogg",
 		"media/heat.ogg",
