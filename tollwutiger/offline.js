@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1730490628,
+	"version": 1730491877,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -41,6 +41,7 @@
 		"images/button2-sheet0.png",
 		"images/chwkilogo-sheet0.png",
 		"images/exit-sheet0.png",
+		"images/shoothitbox-sheet0.png",
 		"media/flyy1.ogg",
 		"media/machinegun1.ogg",
 		"media/heat.ogg",
