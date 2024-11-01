@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1730407869,
+	"version": 1730490628,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -25,7 +25,6 @@
 		"images/hitbox-sheet0.png",
 		"images/enemy_1_1-sheet0.png",
 		"images/enemy_1_1_bullet-sheet0.png",
-		"images/warning-sheet0.png",
 		"images/firesmoke.png",
 		"images/insertsh.png",
 		"images/enemy_muromec-sheet0.png",
@@ -36,6 +35,12 @@
 		"images/camelturret-sheet0.png",
 		"images/joystick-sheet0.png",
 		"images/ratatouille-sheet0.png",
+		"images/sprite-sheet0.png",
+		"images/gamename-sheet0.png",
+		"images/button1-sheet0.png",
+		"images/button2-sheet0.png",
+		"images/chwkilogo-sheet0.png",
+		"images/exit-sheet0.png",
 		"media/flyy1.ogg",
 		"media/machinegun1.ogg",
 		"media/heat.ogg",
