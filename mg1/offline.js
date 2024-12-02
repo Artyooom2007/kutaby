@@ -1,5 +1,5 @@
 ﻿{
-	"version": 1733088651,
+	"version": 1733172613,
 	"fileList": [
 		"data.js",
 		"c2runtime.js",
@@ -56,6 +56,9 @@
 		"images/ded-sheet1.png",
 		"images/ded-sheet2.png",
 		"images/rfl-sheet0.png",
+		"images/dirijabl-sheet0.png",
+		"images/dirturret-sheet0.png",
+		"images/wavefont.png",
 		"media/flyy1.ogg",
 		"media/machinegun1.ogg",
 		"media/heat.ogg",
