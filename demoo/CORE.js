@@ -1,4 +1,4 @@
-/*	STONEMASON SDK V05
+/*	STONEMASON SDK V06
 	BY CHUOVAKIE
 */
 class StoneMasonCore {

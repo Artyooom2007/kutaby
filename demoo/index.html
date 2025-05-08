@@ -2,7 +2,7 @@
 <html>
 	<head>
 	
-    <title>STONEMASON Engine v05 "Demo game"</title>
+    <title>STONEMASON Engine v06 "Demo Game"</title>
     <style>
         body {
             margin: 0;
@@ -15,7 +15,7 @@
         }
         #gameCanvas {
             position:absolute;
-            height:100%;
+            
             image-rendering:pixelated;
 
             border: 2px solid #34495e;
@@ -26,20 +26,24 @@
 	</head>
 	<body>
 	
-    <!--Паровозик загрузки:-->
+    <!--         The TRAIN     -->
     
-    <!--1. Компоненты ядра-->
-    <script src="SMGL.js"></script>
+    <!--     1. CORE components-->
+
+
+    <script src="SMG.js"></script>
     <script src="SMATH.js"></script>
+    <!--           	    2. CORE-->
 
-    <!--2. Ядро-->
     <script src="CORE.js"></script>
+	<!--        3.Basic Scripts-->
 
-	<!--3.Базовые крипты-->
     <script src="scripts/script.js"></script>
-    
-    <!--4.Конечные скрипты-->
+
+    <!--        4.Final Scripts-->
+
     <script src="scripts/init.js"></script>
+    <script src="SMOUSE.js"></script>
 
 	</body>
 </html>

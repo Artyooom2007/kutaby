@@ -10,6 +10,7 @@ window.onload = async () => {
     await game.assets.loadImage('projectile', 'assets/projectile.png');
     await game.assets.loadAudio('bg','assets/bg.mp3');
     await game.assets.loadAudio('shot','assets/shot.mp3');
+    await game.assets.loadAudio('minishot','assets/minishot.mp3');
     await game.assets.loadAudio('getshot','assets/getshot.mp3');
     await game.assets.loadAudio('doshot','assets/doshot.mp3');
     await game.assets.loadAudio('hit','assets/hit.mp3');
@@ -36,13 +37,12 @@ window.onload = async () => {
             if(game.input.isKeyPressed('KeyD')) entity.x += entity.speed;
             if(game.input.isKeyPressed('KeyE')) script.doenemy();
 
-            if (entity.delay>5){
-                if(game.input.isKeyPressed('ArrowUp')) {   script.doshot(3);game.assets.playAudio('shot', { loop: true, volume: 0.5 });}
-                if(game.input.isKeyPressed('ArrowDown')){  script.doshot(2);game.assets.playAudio('shot', { loop: true, volume: 0.5 });}
-                if(game.input.isKeyPressed('ArrowLeft')){  script.doshot(1);game.assets.playAudio('shot', { loop: true, volume: 0.5 });}
-                if(game.input.isKeyPressed('ArrowRight')){ script.doshot(0);game.assets.playAudio('shot', { loop: true, volume: 0.5 });}
-                
-                entity.delay = 0;
+            if (entity.delay>4){
+                if ( (Mouse.act == 1) && (Mouse.button == 0) ){ 
+                    script.doshot(Mouse.x,Mouse.y); game.assets.playAudio('shot', { loop: true, volume: 0.5 }); entity.delay = 0;}
+                if ( (Mouse.act == 1) && (Mouse.button == 2) ){ 
+                    script.doshot(Mouse.x,Mouse.y); script.doshot(Mouse.x,Mouse.y); script.doshot(Mouse.x,Mouse.y);
+                    game.assets.playAudio('minishot', { loop: true, volume: 0.2 }); entity.delay = 1;}  
             }
 
             // Границы экрана
@@ -51,8 +51,6 @@ window.onload = async () => {
         }
         });
 
-    //entity.vx = Math.cos(angle) * entity.speed;
-    //entity.vy = Math.sin(angle) * entity.speed;
 
     script.setPlayer(player);
     

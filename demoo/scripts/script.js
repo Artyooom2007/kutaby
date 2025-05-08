@@ -8,7 +8,7 @@ class MyScript{
         this.player = player;
     }
 
-    doshot(angl){
+    doshot(mx,my){
         // Создаём снаряд
         const projectile = this.game.createEntity({
             x: this.player.x,
@@ -16,17 +16,19 @@ class MyScript{
             width: 16,
             height: 16,
             sprite: 'projectile',
-            speed: 12,
-            angle: angl,
+            speed: Random(5)+15,
+            angle: (FromToAngle(this.player.x,this.player.y, mx, my)+ ((Random(20)-10)/100)),
             onUpdate: (game, entity) => {
-                
-                switch(entity.angle){
-                    case 0: entity.x += entity.speed; break;
-                    case 1: entity.x -= entity.speed; break;
-                    case 2: entity.y += entity.speed; break;
-                    case 3: entity.y -= entity.speed; break;
-                }
-                
+
+                const move = MoveAngle(entity.angle,entity.speed);
+                entity.x += move.x;
+                entity.y += move.y;
+
+                if (entity.x > Math.max(0, Math.min(game.canvas.width - entity.width, entity.x))||entity.x < Math.max(0, Math.min(game.canvas.width - entity.width, entity.x))){
+                    game.removeEntity(entity);}
+                if (entity.y > Math.max(0, Math.min(game.canvas.height - entity.height, entity.y))||entity.y < Math.max(0, Math.min(game.canvas.height - entity.height, entity.y))){
+                    game.removeEntity(entity);}
+
                 // Проверка столкновений с врагами
                 game.entities.forEach(other => {
                     if (other.sprite === 'enemy') {
@@ -55,8 +57,6 @@ class MyScript{
             sprite: 'enemy',
             speed: 2,
             hp: 5,
-            //hvec:0,  Это было для пиздеца ниже
-            //vvec:0,
             onUpdate: (game, entity) => {
 
                 const angle = FromToAngle(entity.x, entity.y,this.player.x+(Random(100)-50), this.player.y+(Random(100)-50));
@@ -65,23 +65,6 @@ class MyScript{
                 entity.x += move.x;
                 entity.y += move.y;
 
-                /*
-                Этот пиздец тут был со времён итерации движка 02!!!
-                
-                if (this.player.x > entity.x){entity.hvec = 1;} else if (Math.round(this.player.x/2) == Math.round(entity.x/2)){entity.hvec= 0;} else {entity.hvec= 2;}
-                if (this.player.y > entity.y){entity.vvec = 1;} else if (Math.round(this.player.y/2) == Math.round(entity.y/2)){entity.vvec= 0;} else {entity.vvec= 2;}
-
-                switch(entity.hvec){
-                    case 0: entity.x; break;
-                    case 1: entity.x += entity.speed; break;
-                    case 2: entity.x -= entity.speed; break;
-                }
-                switch(entity.vvec){
-                    case 0: entity.y; break;
-                    case 1: entity.y += entity.speed; break;
-                    case 2: entity.y -= entity.speed; break;
-                }
-                */
                 if (entity.hp<=0) {this.docoin(entity.x,entity.y); game.assets.playAudio('hit', { loop: false, volume: 0.5 }); game.removeEntity(entity)};
                 
             }
